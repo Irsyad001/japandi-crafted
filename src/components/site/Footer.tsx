@@ -70,7 +70,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Aoki Studio. Made slowly.</p>
-          <p>Kyoto · Copenhagen</p>
+          <p>Kuala Lumpur, Malaysia</p>
         </div>
       </div>
     </footer>

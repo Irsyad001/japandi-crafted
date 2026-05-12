@@ -23,9 +23,9 @@ export function Collection() {
                 Curated Collection
               </p>
             </Reveal>
-            <Reveal delay={0.1} className="text-slate-500">
+            <Reveal delay={0.1}>
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-                Imagines. Custom. Own.
+                Imagines. Custom. <span className="text-slate-500">Own.</span>
               </h2>
             </Reveal>
           </div>

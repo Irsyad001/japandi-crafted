@@ -1,4 +1,7 @@
-import { Instagram, Linkedin, Send } from "lucide-react";
+import { Instagram, Linkedin, Send, MessageCircle } from "lucide-react";
+
+const WHATSAPP_NUMBER = "+810000000000";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}`;
 
 export function Footer() {
   return (
@@ -15,7 +18,17 @@ export function Footer() {
           <div className="mt-6 flex gap-3">
             <SocialIcon href="#" label="Instagram"><Instagram className="h-4 w-4" /></SocialIcon>
             <SocialIcon href="#" label="LinkedIn"><Linkedin className="h-4 w-4" /></SocialIcon>
+            <SocialIcon href={WHATSAPP_URL} label="WhatsApp"><MessageCircle className="h-4 w-4" /></SocialIcon>
           </div>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+          >
+            <MessageCircle className="h-4 w-4" />
+            <span>WhatsApp: {WHATSAPP_NUMBER}</span>
+          </a>
         </div>
 
         <div>

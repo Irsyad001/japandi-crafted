@@ -78,7 +78,7 @@ export function Navbar() {
             ))}
             <li>
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center px-5 py-2.5 rounded-xl bg-foreground text-background text-sm font-medium"
               >

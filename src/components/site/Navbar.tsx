@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#home", label: "Home" },
-  { href: "#collection", label: "Collection" },
-  { href: "#process", label: "Process" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#home", label: "Home" },
+  { href: "/#collection", label: "Collection" },
+  { href: "/#process", label: "Process" },
+  { href: "/#contact", label: "Contact" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -29,7 +29,7 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <a href="#home" className="font-serif text-2xl tracking-tight">
+        <a href="/" className="font-serif text-2xl tracking-tight">
           Aoki<span className="text-accent">.</span>
         </a>
 
@@ -47,7 +47,7 @@ export function Navbar() {
         </ul>
 
         <a
-          href="#contact"
+          href="/#contact"
           className="hidden md:inline-flex items-center px-5 py-2.5 rounded-xl bg-foreground text-background text-sm font-medium hover:bg-accent transition-colors"
         >
           Request Quote

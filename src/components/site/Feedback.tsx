@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 import { Star, Send } from "lucide-react";
 
@@ -15,11 +16,37 @@ export function Feedback() {
             Feedback
           </p>
         </Reveal>
-        <Reveal delay={0.1}>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-            Share your <em className="italic text-accent font-light">thoughts</em>.
-          </h2>
-        </Reveal>
+        <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] flex flex-wrap justify-center gap-x-[0.25em]">
+          {["Share", "your"].map((word, i) => (
+            <motion.span
+              key={word}
+              initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.9, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="inline-block"
+            >
+              {word}
+            </motion.span>
+          ))}
+          <motion.em
+            initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.1, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="italic text-accent font-light inline-block relative"
+          >
+            thoughts
+            <motion.span
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1.2, delay: 1.1, ease: [0.65, 0, 0.35, 1] }}
+              className="absolute left-0 -bottom-1 h-px w-full bg-accent origin-left"
+            />
+          </motion.em>
+          <span>.</span>
+        </h2>
         <Reveal delay={0.2}>
           <p className="mt-6 text-muted-foreground max-w-lg mx-auto">
             Every single of your words was the most precious diamond to us.

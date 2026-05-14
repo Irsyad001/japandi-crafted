@@ -22,7 +22,7 @@ export function Feedback() {
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mt-6 text-muted-foreground max-w-lg mx-auto">
-            Every word shapes the way we craft. Tell us what moved you — or what we could refine.
+            Every single of your words was the most precious diamond to us.
           </p>
         </Reveal>
 

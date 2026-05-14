@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import aokiLogo from "@/assets/aoki-logo.png";
 
 const links = [
   { href: "/#home", label: "Home" },
@@ -30,8 +29,7 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2 font-serif text-2xl tracking-tight">
-          <img src={aokiLogo} alt="Aoki logo" className="h-8 w-auto" />
+        <a href="/" className="font-serif text-2xl tracking-tight">
           Aoki<span className="text-accent">.</span>
         </a>
 

@@ -37,8 +37,8 @@ export function Hero() {
             className="mt-8 max-w-md text-base lg:text-lg text-muted-foreground leading-relaxed"
           >
             A small studio shaping sustainably sourced oak into furniture meant
-            to outlive trends. Quietly designed, patiently built — one piece at
-            a time.
+            to outlive trends. Quietly designed, patiently built — we do not build
+            furniture, we build emotion and create memories.
           </motion.p>
 
           <motion.div

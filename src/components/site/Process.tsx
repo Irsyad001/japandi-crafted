@@ -34,7 +34,7 @@ export function Process() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-              Three movements, <em className="italic text-accent font-light">one </em>
+              Three movements, <em className="italic font-light" style={{ color: "#AED9E0" }}>one </em>
               quiet philosophy.
             </h2>
           </Reveal>

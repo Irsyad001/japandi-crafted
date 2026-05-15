@@ -25,7 +25,7 @@ export function Hero() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight"
           >
-            Crafting <em className="italic text-accent font-light">timeless</em>
+            Crafting <em className="italic font-light" style={{ color: "#AED9E0" }}>timeless</em>
             <br />
             comfort.
           </motion.h1>

@@ -25,7 +25,7 @@ export function Collection() {
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-                Imagines. Custom. <span className="text-slate-500">Own.</span>
+                Imagines. Custom. <span style={{ color: "#AED9E0" }}>Own.</span>
               </h2>
             </Reveal>
           </div>

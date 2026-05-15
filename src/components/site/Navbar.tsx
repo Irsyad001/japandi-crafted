@@ -50,7 +50,7 @@ export function Navbar() {
           href="/#contact"
           className="hidden md:inline-flex items-center px-5 py-2.5 rounded-xl bg-foreground text-background text-sm font-medium hover:bg-accent transition-colors"
         >
-          Request Quote
+          Inquire
         </a>
 
         <button
@@ -82,7 +82,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center px-5 py-2.5 rounded-xl bg-foreground text-background text-sm font-medium"
               >
-                Request Quote
+                Inquire
               </a>
             </li>
           </ul>

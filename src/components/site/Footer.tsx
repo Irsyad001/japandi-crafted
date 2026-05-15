@@ -1,6 +1,6 @@
 import { Instagram, Linkedin, Send, MessageCircle } from "lucide-react";
 
-const WHATSAPP_NUMBER = "+810000000000";
+const WHATSAPP_NUMBER = "+60 18-323 9341";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}`;
 
 export function Footer() {

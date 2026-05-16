@@ -84,8 +84,8 @@
   --secondary-foreground: oklch(0.965 0.006 165);
   --muted: oklch(0.92 0.008 165);
   --muted-foreground: oklch(0.45 0.012 220);
-  --accent: oklch(0.54 0.05 210);                 /* #4A7C82 teal */
-  --accent-foreground: oklch(0.98 0.005 165);
+  --accent: oklch(0.865 0.038 215);                /* #AED9E0 soft sky */
+  --accent-foreground: oklch(0.27 0.012 220);
   --oak: oklch(0.81 0.05 80);                     /* #D7C4A5 warm sand */
   --oak-deep: oklch(0.68 0.06 75);
   --stone: oklch(0.88 0.008 200);

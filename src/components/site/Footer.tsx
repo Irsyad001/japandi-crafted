@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 grid md:grid-cols-3 gap-12">
         <div>
           <a href="#home" className="font-serif text-3xl">
-            Aoki<span className="text-accent">.</span>
+            MM TREE Furniture
           </a>
           <p className="mt-5 text-sm text-muted-foreground max-w-xs leading-relaxed">
             A bespoke furniture studio practising the patient craft of Japandi
@@ -69,7 +69,7 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Aoki Studio. Made slowly.</p>
+          <p>© {new Date().getFullYear()} MM TREE Furniture. Created September 17, 2013.</p>
           <p className="tracking-wide">
             <span className="text-foreground/70">No. 30, Jalan Mega 2A</span>
             <span className="mx-2 text-accent">·</span>

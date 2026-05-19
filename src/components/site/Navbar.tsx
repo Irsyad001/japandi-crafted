@@ -30,7 +30,7 @@ export function Navbar() {
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
         <a href="/" className="font-serif text-2xl tracking-tight">
-          Aoki<span className="text-accent">.</span>
+          MM TREE Furniture
         </a>
 
         <ul className="hidden md:flex items-center gap-10 text-sm">

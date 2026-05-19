@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 grid md:grid-cols-3 gap-12">
         <div>
           <a href="#home" className="font-serif text-3xl">
-            Aoki<span className="text-accent">.</span>
+            MM TREE Furniture
           </a>
           <p className="mt-5 text-sm text-muted-foreground max-w-xs leading-relaxed">
             A bespoke furniture studio practising the patient craft of Japandi

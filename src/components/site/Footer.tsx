@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Send, MessageCircle } from "lucide-react";
+import mmtreeLogo from "@/assets/mmtree-logo.png";
 
 const WHATSAPP_NUMBER = "+60 18-323 9341";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}`;
@@ -77,6 +78,23 @@ export function Footer() {
             <span className="mx-2 text-accent">·</span>
             <span className="text-foreground/70">Kajang 43300, Malaysia</span>
           </p>
+        </div>
+      </div>
+
+      <div className="border-t border-border bg-accent/30">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 pt-16 pb-4 flex flex-col items-center">
+          <img
+            src={mmtreeLogo}
+            alt="MM TREE Furniture logo"
+            className="h-28 w-28 md:h-36 md:w-36 object-contain mb-8"
+          />
+          <h2
+            aria-label="MM TREE Furniture"
+            className="font-serif text-foreground leading-[0.85] tracking-tight text-center w-full"
+            style={{ fontSize: "clamp(3.5rem, 18vw, 18rem)" }}
+          >
+            MM&nbsp;TREE
+          </h2>
         </div>
       </div>
     </footer>

@@ -82,19 +82,21 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border bg-accent/30">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-10 pt-16 pb-4 flex flex-col items-center">
+        <div className="relative w-full overflow-hidden">
           <img
             src={mmtreeLogo}
             alt="MM TREE Furniture logo"
-            className="h-28 w-28 md:h-36 md:w-36 object-contain mb-8"
+            className="block w-full h-auto object-cover select-none pointer-events-none"
           />
-          <h2
-            aria-label="MM TREE Furniture"
-            className="font-serif text-foreground leading-[0.85] tracking-tight text-center w-full"
-            style={{ fontSize: "clamp(3.5rem, 18vw, 18rem)" }}
-          >
-            MM&nbsp;TREE
-          </h2>
+          <div className="absolute inset-0 flex items-center justify-center px-4">
+            <h2
+              aria-label="MM TREE Furniture"
+              className="font-serif text-foreground leading-[0.9] tracking-tight text-center drop-shadow-[0_2px_12px_rgba(255,255,255,0.5)]"
+              style={{ fontSize: "clamp(1.75rem, 7vw, 7rem)" }}
+            >
+              MM TREE Furniture
+            </h2>
+          </div>
         </div>
       </div>
     </footer>

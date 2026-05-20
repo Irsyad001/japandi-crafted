@@ -88,15 +88,6 @@ export function Footer() {
             alt="MM TREE Furniture logo"
             className="block w-full h-auto object-cover select-none pointer-events-none"
           />
-          <div className="absolute inset-0 flex items-center justify-center px-4">
-            <h2
-              aria-label="MM TREE Furniture"
-              className="font-serif text-foreground leading-[0.9] tracking-tight text-center drop-shadow-[0_2px_12px_rgba(255,255,255,0.5)]"
-              style={{ fontSize: "clamp(1.75rem, 7vw, 7rem)" }}
-            >
-              MM TREE Furniture
-            </h2>
-          </div>
         </div>
       </div>
     </footer>

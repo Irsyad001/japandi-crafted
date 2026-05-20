@@ -69,7 +69,7 @@ function FaqPage() {
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+            <p className="text-xs uppercase tracking-[0.3em] text-black mb-6">
               Questions, answered
             </p>
           </Reveal>

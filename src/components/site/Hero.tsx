@@ -65,7 +65,7 @@ export function Hero() {
           <div className="mt-16 flex items-center gap-8 text-xs uppercase tracking-widest text-muted-foreground">
             <div>
               <div className="font-serif text-3xl text-foreground normal-case tracking-tight">
-                12<span className="text-accent">+</span>
+                13
               </div>
               <div className="mt-1">Years of craft</div>
             </div>

@@ -19,7 +19,7 @@ export function Collection() {
         <div className="flex flex-wrap items-end justify-between gap-6 mb-16">
           <div className="max-w-xl">
             <Reveal>
-              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+              <p className="text-xs uppercase tracking-[0.3em] text-black mb-6">
                 Curated Collection
               </p>
             </Reveal>

@@ -14,11 +14,6 @@ export function Inquiry() {
   return (
     <section id="contact" className="py-28 lg:py-40 bg-secondary/40">
       <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
-        <Reveal>
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-            Inquiry
-          </p>
-        </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
             Schedule A Site Visit

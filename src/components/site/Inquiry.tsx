@@ -21,7 +21,7 @@ export function Inquiry() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-            Begin a <em className="italic text-accent font-light">conversation</em>.
+            Schedule A Site Visit
           </h2>
         </Reveal>
         <Reveal delay={0.2}>

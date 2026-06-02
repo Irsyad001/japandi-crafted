@@ -2,11 +2,14 @@ import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { ArrowRight } from "lucide-react";
 
-const types = ["Dining", "Living", "Workspace", "Bedroom", "Other"];
+const residenceTypes = ["Apartment", "House", "Villa", "Office", "Other"];
+const furnitureTypes = ["Dining", "Living", "Workspace", "Bedroom", "Other"];
 
 export function Inquiry() {
   const [sent, setSent] = useState(false);
-  const [type, setType] = useState("Dining");
+  const [residence, setResidence] = useState("Apartment");
+  const [furniture, setFurniture] = useState("Dining");
+  const [reference, setReference] = useState<File | null>(null);
 
   return (
     <section id="contact" className="py-28 lg:py-40 bg-secondary/40">
@@ -44,15 +47,33 @@ export function Inquiry() {
               />
             </Field>
 
-            <Field label="Furniture type">
+            <Field label="Phone number">
+              <input
+                required
+                type="tel"
+                placeholder="+62 812 3456 7890"
+                className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
+              />
+            </Field>
+
+            <Field label="Address">
+              <textarea
+                required
+                rows={2}
+                placeholder="Street, city, postal code"
+                className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 resize-none transition-colors"
+              />
+            </Field>
+
+            <Field label="Type of residence">
               <div className="flex flex-wrap gap-2 pt-3">
-                {types.map((t) => (
+                {residenceTypes.map((t) => (
                   <button
                     type="button"
                     key={t}
-                    onClick={() => setType(t)}
+                    onClick={() => setResidence(t)}
                     className={`px-4 py-2 rounded-full text-sm border transition-colors ${
-                      type === t
+                      residence === t
                         ? "bg-foreground text-background border-foreground"
                         : "border-border hover:border-accent/60"
                     }`}
@@ -63,12 +84,55 @@ export function Inquiry() {
               </div>
             </Field>
 
-            <Field label="Tell us about it">
-              <textarea
+            <Field label="Type of furniture">
+              <div className="flex flex-wrap gap-2 pt-3">
+                {furnitureTypes.map((t) => (
+                  <button
+                    type="button"
+                    key={t}
+                    onClick={() => setFurniture(t)}
+                    className={`px-4 py-2 rounded-full text-sm border transition-colors ${
+                      furniture === t
+                        ? "bg-foreground text-background border-foreground"
+                        : "border-border hover:border-accent/60"
+                    }`}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+            </Field>
+
+            <Field label="Reference picture (optional)">
+              <div className="pt-3">
+                <label className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-border hover:border-accent/60 cursor-pointer text-sm transition-colors">
+                  <span>{reference ? "Change file" : "Upload image"}</span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(e) => setReference(e.target.files?.[0] ?? null)}
+                  />
+                </label>
+                {reference && (
+                  <span className="ml-3 text-sm text-muted-foreground">{reference.name}</span>
+                )}
+              </div>
+            </Field>
+
+            <Field label="Budget (optional)">
+              <input
+                type="text"
+                placeholder="e.g. $2,000 – $4,000"
+                className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
+              />
+            </Field>
+
+            <Field label="Preferred date">
+              <input
                 required
-                rows={4}
-                placeholder="A low oak coffee table for a small living room…"
-                className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 resize-none transition-colors"
+                type="date"
+                className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
               />
             </Field>
 

@@ -139,7 +139,7 @@ export function Inquiry() {
                 type="submit"
                 className="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-foreground text-background text-sm font-medium hover:bg-accent transition-colors"
               >
-                {sent ? "Thank you — we'll be in touch" : "Send inquiry"}
+                {sent ? "Thank you — we'll be in touch" : "Submit"}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>

@@ -7,6 +7,12 @@ const furnitureTypes = ["Dining", "Living", "Workspace", "Bedroom", "Other"];
 
 export function Inquiry() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [budget, setBudget] = useState("");
+  const [date, setDate] = useState("");
   const [residence, setResidence] = useState("Apartment");
   const [furniture, setFurniture] = useState("Dining");
   const [reference, setReference] = useState<File | null>(null);
@@ -27,9 +33,29 @@ export function Inquiry() {
 
         <Reveal delay={0.3}>
           <form
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              setSent(true);
+              setSubmitting(true);
+              try {
+                const fd = new FormData();
+                fd.append("name", name);
+                fd.append("phone", phone);
+                fd.append("address", address);
+                fd.append("residence", residence);
+                fd.append("furniture", furniture);
+                fd.append("budget", budget);
+                fd.append("date", date);
+                if (reference) fd.append("reference", reference);
+                await fetch("https://hook.us2.make.com/b5bsbst9vp2ttcqiasxtcnk5xoeelya8", {
+                  method: "POST",
+                  body: fd,
+                });
+                setSent(true);
+              } catch (err) {
+                console.error("Webhook submission failed", err);
+              } finally {
+                setSubmitting(false);
+              }
             }}
             className="mt-16 text-left space-y-10"
           >
@@ -38,6 +64,8 @@ export function Inquiry() {
                 required
                 type="text"
                 placeholder="Mei Tanaka"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
               />
             </Field>
@@ -47,6 +75,8 @@ export function Inquiry() {
                 required
                 type="tel"
                 placeholder="+62 812 3456 7890"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
               />
             </Field>
@@ -56,6 +86,8 @@ export function Inquiry() {
                 required
                 rows={2}
                 placeholder="Street, city, postal code"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
                 className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 resize-none transition-colors"
               />
             </Field>
@@ -119,6 +151,8 @@ export function Inquiry() {
               <input
                 type="text"
                 placeholder="e.g. $2,000 – $4,000"
+                value={budget}
+                onChange={(e) => setBudget(e.target.value)}
                 className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
               />
             </Field>
@@ -127,6 +161,8 @@ export function Inquiry() {
               <input
                 required
                 type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
                 className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
               />
             </Field>
@@ -137,9 +173,10 @@ export function Inquiry() {
               </p>
               <button
                 type="submit"
+                disabled={submitting}
                 className="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-foreground text-background text-sm font-medium hover:bg-accent transition-colors"
               >
-                {sent ? "Thank you — we'll be in touch" : "Submit"}
+                {sent ? "Thank you — we'll be in touch" : submitting ? "Submitting..." : "Submit"}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>

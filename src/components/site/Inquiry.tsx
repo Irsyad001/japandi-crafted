@@ -15,7 +15,7 @@ export function Inquiry() {
   const [date, setDate] = useState("");
   const [residence, setResidence] = useState("Apartment");
   const [furniture, setFurniture] = useState("Dining");
-  const [reference, setReference] = useState<File | null>(null);
+  const [reference, setReference] = useState("");
 
   return (
     <section id="contact" className="py-28 lg:py-40 bg-secondary/40">
@@ -130,21 +130,14 @@ export function Inquiry() {
               </div>
             </Field>
 
-            <Field label="Reference picture (optional)">
-              <div className="pt-3">
-                <label className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-border hover:border-accent/60 cursor-pointer text-sm transition-colors">
-                  <span>{reference ? "Change file" : "Upload image"}</span>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={(e) => setReference(e.target.files?.[0] ?? null)}
-                  />
-                </label>
-                {reference && (
-                  <span className="ml-3 text-sm text-muted-foreground">{reference.name}</span>
-                )}
-              </div>
+            <Field label="Reference picture link (optional)">
+              <input
+                type="url"
+                placeholder="Paste image URL (e.g. https://...)"
+                value={reference}
+                onChange={(e) => setReference(e.target.value)}
+                className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
+              />
             </Field>
 
             <Field label="Budget (optional)">

@@ -23,9 +23,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight font-serif"
+            className="font-serif italic font-light text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight"
           >
-            Crafting <em className="italic font-light" style={{ color: "#AED9E0" }}>timeless</em>
+            Crafting <em style={{ color: "#AED9E0" }}>timeless</em>
             <br />
             comfort.
           </motion.h1>

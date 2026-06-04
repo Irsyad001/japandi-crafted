@@ -4,6 +4,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Orange Avenue';
+  src: url('/__l5e/assets-v1/a86a3741-2947-4534-89da-caaf7d749f16/OrangeAvenueDEMO-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
  * Design system definition.
  *

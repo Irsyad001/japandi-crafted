@@ -28,7 +28,7 @@ export function Process() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="max-w-2xl mb-20">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+            <p className="text-xs uppercase tracking-[0.3em] text-black mb-6">
               The Craft
             </p>
           </Reveal>

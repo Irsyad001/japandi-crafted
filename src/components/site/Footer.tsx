@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Send, MessageCircle } from "lucide-react";
+import { Instagram, Linkedin, Send, MessageCircle, Facebook } from "lucide-react";
 import mmtreeLogo from "@/assets/mmtree-logo.png";
 
 const WHATSAPP_NUMBER = "+60 18-323 9341";

@@ -18,6 +18,7 @@ export function Footer() {
           </p>
           <div className="mt-6 flex gap-3">
             <SocialIcon href="#" label="Instagram"><Instagram className="h-4 w-4" /></SocialIcon>
+            <SocialIcon href="#" label="Facebook"><Facebook className="h-4 w-4" /></SocialIcon>
             <SocialIcon href="#" label="LinkedIn"><Linkedin className="h-4 w-4" /></SocialIcon>
             <SocialIcon href={WHATSAPP_URL} label="WhatsApp"><MessageCircle className="h-4 w-4" /></SocialIcon>
           </div>

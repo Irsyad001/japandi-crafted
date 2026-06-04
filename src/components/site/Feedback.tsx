@@ -12,7 +12,7 @@ export function Feedback() {
     <section id="feedback" className="py-28 lg:py-40">
       <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-black mb-6">
             Feedback
           </p>
         </Reveal>

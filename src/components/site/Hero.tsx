@@ -23,9 +23,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif italic font-light text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight"
+            style={{ fontFamily: "'Orange Avenue', Georgia, serif", fontWeight: 400 }}
           >
-            Crafting <em style={{ color: "#AED9E0" }}>timeless</em>
+            Crafting <em style={{ color: "#AED9E0", fontStyle: "normal" }}>timeless</em>
             <br />
             comfort.
           </motion.h1>

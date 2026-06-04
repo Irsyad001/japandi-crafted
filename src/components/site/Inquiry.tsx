@@ -9,6 +9,7 @@ export function Inquiry() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [budget, setBudget] = useState("");
@@ -39,6 +40,7 @@ export function Inquiry() {
               try {
                 const fd = new FormData();
                 fd.append("name", name);
+                fd.append("email", email);
                 fd.append("phone", phone);
                 fd.append("address", address);
                 fd.append("residence", residence);
@@ -77,6 +79,17 @@ export function Inquiry() {
                 placeholder="+62 812 3456 7890"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+                className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
+              />
+            </Field>
+
+            <Field label="Email">
+              <input
+                required
+                type="email"
+                placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-transparent border-0 border-b border-border focus:border-accent outline-none py-3 text-lg placeholder:text-muted-foreground/60 transition-colors"
               />
             </Field>

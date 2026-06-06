@@ -9,8 +9,8 @@ export function Feedback() {
   const [hover, setHover] = useState(0);
 
   return (
-    <section id="feedback" className="py-28 lg:py-40">
-      <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
+    <section id="feedback" className="py-20 lg:py-40">
+      <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-10 text-center">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.3em] text-black mb-6">
             Feedback
@@ -59,7 +59,7 @@ export function Feedback() {
               e.preventDefault();
               setSent(true);
             }}
-            className="mt-16 text-left space-y-10"
+            className="mt-12 sm:mt-16 text-left space-y-8 sm:space-y-10"
           >
             <label className="block">
               <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
@@ -77,7 +77,7 @@ export function Feedback() {
               <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 Your impression
               </span>
-              <div className="flex gap-2 pt-4">
+              <div className="flex gap-3 pt-4">
                 {[1, 2, 3, 4, 5].map((n) => (
                   <button
                     type="button"
@@ -86,10 +86,10 @@ export function Feedback() {
                     onMouseLeave={() => setHover(0)}
                     onClick={() => setRating(n)}
                     aria-label={`${n} star${n > 1 ? "s" : ""}`}
-                    className="transition-transform hover:scale-110"
+                    className="p-1.5 -m-1.5 transition-transform hover:scale-110"
                   >
                     <Star
-                      className={`h-7 w-7 transition-colors ${
+                      className={`h-8 w-8 transition-colors ${
                         n <= (hover || rating)
                           ? "fill-accent text-accent"
                           : "text-border"
@@ -112,13 +112,13 @@ export function Feedback() {
               />
             </label>
 
-            <div className="pt-4 flex items-center justify-between flex-wrap gap-4">
-              <p className="text-xs text-muted-foreground">
+            <div className="pt-4 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-4">
+              <p className="text-xs text-muted-foreground text-center sm:text-left">
                 Your words are read by hand, not by algorithm.
               </p>
               <button
                 type="submit"
-                className="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-foreground text-background text-sm font-medium hover:bg-accent transition-colors"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-4 min-h-12 rounded-xl bg-foreground text-background text-sm font-medium hover:bg-accent transition-colors w-full sm:w-auto"
               >
                 {sent ? "Thank you — received with care" : "Send feedback"}
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />

@@ -19,8 +19,8 @@ export function Inquiry() {
   const [reference, setReference] = useState("");
 
   return (
-    <section id="contact" className="py-28 lg:py-40 bg-secondary/40">
-      <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
+    <section id="contact" className="py-20 lg:py-40 bg-secondary/40">
+      <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-10 text-center">
         <Reveal delay={0.1}>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
             Schedule A Site Visit
@@ -59,7 +59,7 @@ export function Inquiry() {
                 setSubmitting(false);
               }
             }}
-            className="mt-16 text-left space-y-10"
+            className="mt-12 sm:mt-16 text-left space-y-8 sm:space-y-10"
           >
             <Field label="Your name">
               <input
@@ -112,7 +112,7 @@ export function Inquiry() {
                     type="button"
                     key={t}
                     onClick={() => setResidence(t)}
-                    className={`px-4 py-2 rounded-full text-sm border transition-colors ${
+                    className={`px-4 py-2.5 min-h-11 rounded-full text-sm border transition-colors ${
                       residence === t
                         ? "bg-foreground text-background border-foreground"
                         : "border-border hover:border-accent/60"
@@ -131,7 +131,7 @@ export function Inquiry() {
                     type="button"
                     key={t}
                     onClick={() => setFurniture(t)}
-                    className={`px-4 py-2 rounded-full text-sm border transition-colors ${
+                    className={`px-4 py-2.5 min-h-11 rounded-full text-sm border transition-colors ${
                       furniture === t
                         ? "bg-foreground text-background border-foreground"
                         : "border-border hover:border-accent/60"
@@ -173,14 +173,14 @@ export function Inquiry() {
               />
             </Field>
 
-            <div className="pt-4 flex items-center justify-between flex-wrap gap-4">
-              <p className="text-xs text-muted-foreground">
+            <div className="pt-4 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-4">
+              <p className="text-xs text-muted-foreground text-center sm:text-left">
                 By submitting you agree to our quiet, no-spam policy.
               </p>
               <button
                 type="submit"
                 disabled={submitting}
-                className="group inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-foreground text-background text-sm font-medium hover:bg-accent transition-colors"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-4 min-h-12 rounded-xl bg-foreground text-background text-sm font-medium hover:bg-accent transition-colors w-full sm:w-auto"
               >
                 {sent ? "Thank you — we'll be in touch" : submitting ? "Submitting..." : "Submit"}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

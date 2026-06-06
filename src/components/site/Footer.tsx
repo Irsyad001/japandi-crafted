@@ -7,9 +7,9 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}`;
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 grid md:grid-cols-3 gap-12">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10 py-14 sm:py-20 grid md:grid-cols-3 gap-10 sm:gap-12">
         <div>
-          <a href="#home" className="font-serif text-3xl">
+          <a href="#home" className="font-serif text-2xl sm:text-3xl">
             MM TREE Furniture
           </a>
           <p className="mt-5 text-sm text-muted-foreground max-w-xs leading-relaxed">
@@ -70,13 +70,13 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10 py-6 flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} MM TREE Furniture. Created September 17, 2013.</p>
-          <p className="tracking-wide">
+          <p className="tracking-wide flex flex-col sm:block leading-relaxed">
             <span className="text-foreground/70">No. 30, Jalan Mega 2A</span>
-            <span className="mx-2 text-accent">·</span>
+            <span className="hidden sm:inline mx-2 text-accent">·</span>
             <span className="text-foreground/70">Tmn Industri Mega</span>
-            <span className="mx-2 text-accent">·</span>
+            <span className="hidden sm:inline mx-2 text-accent">·</span>
             <span className="text-foreground/70">Kajang 43300, Malaysia</span>
           </p>
         </div>
@@ -100,7 +100,7 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
     <a
       href={href}
       aria-label={label}
-      className="h-9 w-9 inline-flex items-center justify-center rounded-full border border-border hover:border-accent hover:text-accent transition-colors"
+      className="h-11 w-11 inline-flex items-center justify-center rounded-full border border-border hover:border-accent hover:text-accent transition-colors"
     >
       {children}
     </a>

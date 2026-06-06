@@ -24,9 +24,9 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="py-28 lg:py-40 bg-secondary/40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="max-w-2xl mb-20">
+    <section id="process" className="py-20 lg:py-40 bg-secondary/40">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+        <div className="max-w-2xl mb-12 sm:mb-20">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.3em] text-black mb-6">
               The Craft
@@ -40,11 +40,11 @@ export function Process() {
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.12}>
-              <div className="group relative h-full p-8 lg:p-10 bg-background rounded-2xl border border-border/60 hover:border-accent/40 hover:shadow-[0_20px_60px_-30px_rgba(139,94,60,0.35)] transition-all duration-500">
-                <div className="flex items-baseline justify-between mb-10">
+              <div className="group relative h-full p-6 sm:p-8 lg:p-10 bg-background rounded-2xl border border-border/60 hover:border-accent/40 hover:shadow-[0_20px_60px_-30px_rgba(139,94,60,0.35)] transition-all duration-500">
+                <div className="flex items-baseline justify-between mb-6 sm:mb-10">
                   <span className="font-serif text-5xl text-accent/80">{s.n}</span>
                   <s.icon className="h-6 w-6 text-foreground/60 group-hover:text-accent transition-colors" strokeWidth={1.4} />
                 </div>

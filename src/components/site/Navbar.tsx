@@ -28,8 +28,8 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <a href="/" className="font-serif text-2xl tracking-tight">
+      <nav className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-3">
+        <a href="/" className="font-serif text-lg sm:text-2xl tracking-tight">
           MM TREE Furniture
         </a>
 
@@ -55,7 +55,7 @@ export function Navbar() {
 
         <button
           aria-label="Menu"
-          className="md:hidden p-2 -mr-2"
+          className="md:hidden inline-flex items-center justify-center h-11 w-11 -mr-2 rounded-md"
           onClick={() => setOpen((o) => !o)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

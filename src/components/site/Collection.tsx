@@ -14,9 +14,9 @@ const items = [
 
 export function Collection() {
   return (
-    <section id="collection" className="py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-6 mb-16">
+    <section id="collection" className="py-20 lg:py-40">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-6 mb-10 sm:mb-16">
           <div className="max-w-xl">
             <Reveal>
               <p className="text-xs uppercase tracking-[0.3em] text-black mb-6">
@@ -36,9 +36,9 @@ export function Collection() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-[auto] gap-5 md:auto-rows-[260px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-[auto] gap-4 sm:gap-5 md:auto-rows-[260px]">
           {items.map((it, i) => (
-            <Reveal key={it.label} delay={i * 0.08} className={`${it.span} group relative overflow-hidden rounded-2xl bg-secondary`}>
+            <Reveal key={it.label} delay={i * 0.08} className={`md:${it.span} group relative overflow-hidden rounded-2xl bg-secondary`}>
               <div className="absolute inset-0">
                 <img
                   src={it.src}

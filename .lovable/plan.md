@@ -1,48 +1,53 @@
-# Improve Mobile Comfort
+## Portfolio Page Plan
 
-Goal: make the site feel easier and more comfortable to use on phones — better spacing, bigger tap targets, less horizontal cramping, smoother scrolling, and a friendlier mobile nav.
+Create a new route `/portfolio` showcasing completed projects, matching the existing Japandi aesthetic (serif headings, accent `#AED9E0`, soft borders, generous spacing) used across Hero/Collection/Process.
 
-## What I'll change
+### Files to create
+- `src/routes/portfolio.tsx` — TanStack route with `head()` SEO metadata (title, description, og:title, og:description).
+- `src/components/site/Portfolio.tsx` — page body component (header + filter tabs + grid + CTA), keeps the route file thin and consistent with how `index.tsx` composes site sections.
 
-### 1. Hero (`src/components/site/Hero.tsx`)
-- Reduce top/bottom padding on mobile (`pt-32 pb-20` → `pt-24 pb-14`) so the headline lands above the fold.
-- Tone down the headline size on small screens (currently jumps to `text-5xl` which can wrap awkwardly with the Orange Avenue font).
-- Make the hero image shorter on mobile (`h-[520px]` → `h-[420px]`) so users reach content faster.
-- Reposition the "Sora Lounge Chair" card so it doesn't get clipped on narrow screens.
-- Stack the two stat blocks (13 / FSC) more comfortably with a smaller divider on mobile.
+### Files to update
+- `src/components/site/Navbar.tsx` — add `{ href: "/portfolio", label: "Portfolio" }` to the `links` array so it appears in both desktop and mobile nav. Use TanStack `<Link>` for the portfolio entry (hash links stay as `<a>`).
 
-### 2. Navbar (`src/components/site/Navbar.tsx`)
-- Enlarge the hamburger tap target to a minimum 44×44px.
-- Slightly shrink the "MM TREE Furniture" logo on small screens so it doesn't crowd the menu button.
-- Add safer spacing and a subtle close-on-link-tap behavior (already partly there).
+### Page structure
 
-### 3. Collection (`src/components/site/Collection.tsx`)
-- Reduce section padding on mobile (`py-28` → `py-20`).
-- Use a taller, single-column auto height on mobile so card text doesn't get cramped against the image.
-- Ensure the "row-span-2" first item doesn't create a giant empty tile on mobile.
+**1. Header**
+- Wrapped in `<Navbar />` + a `<Footer />` so the page matches site chrome.
+- Section padded `pt-32 pb-12 lg:pt-40`, max-width `7xl`, px matches other sections (`px-5 sm:px-6 lg:px-10`).
+- Eyebrow `text-xs uppercase tracking-[0.3em]` "Portfolio".
+- H1 `font-serif text-4xl sm:text-5xl lg:text-6xl`: "Our Work".
+- Subtitle muted: "15 years of crafting custom furniture across Selangor & Kuala Lumpur".
+- Wrapped in `<Reveal>` like other sections.
 
-### 4. Process (`src/components/site/Process.tsx`)
-- Reduce padding and bottom margin (`mb-20` → `mb-12`) on mobile.
-- Slightly smaller card padding on mobile (`p-8` → `p-6`) so the cards feel less boxy.
+**2. Filter tabs**
+- Client state via `useState<'All' | 'Kitchen Cabinet' | 'TV Cabinet' | 'Wardrobe'>('All')`.
+- Horizontal pill row, scrollable on mobile (`overflow-x-auto`), each pill `min-h-11 px-5 py-2.5 rounded-full text-sm border`.
+- Inactive: `border-border text-foreground/70 hover:text-foreground`.
+- Active: `bg-foreground text-background border-foreground` (matches existing CTA styling — the brand's primary contrast already used in Navbar's Inquire button).
+- No URL sync; pure client filter, no reload.
 
-### 5. Inquiry & Feedback forms (`Inquiry.tsx`, `Feedback.tsx`)
-- Increase input font size to 16px minimum (prevents iOS zoom-on-focus).
-- Increase tap target height on the chip buttons (residence / furniture type) and star rating.
-- Make the submit row stack cleanly on mobile (button full-width instead of squished beside the disclaimer).
-- Reduce section vertical padding on mobile.
+**3. Project grid**
+- `grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8`.
+- 5 placeholder cards in a typed array `projects: { id, title, category, location, description, image }[]`:
+  1. Kitchen Cabinet — Shah Alam, Selangor — "Custom melamine kitchen cabinet with full upper and lower units"
+  2. Kitchen Cabinet — Petaling Jaya, Selangor — "Modern L-shape kitchen with solid surface countertop"
+  3. TV Cabinet — Mont Kiara, KL — "Floor-to-ceiling TV feature wall in oak veneer"
+  4. Wardrobe — Bangsar, KL — "4-door sliding wardrobe with internal organisers"
+  5. Kitchen Cabinet — Subang Jaya, Selangor — "Minimalist white kitchen with handleless doors"
+- Placeholder images: use Unsplash furniture URLs (stable `images.unsplash.com/photo-...?w=900&q=80&auto=format&fit=crop`) so the page looks real until photos arrive. Image is a single prop per item, easy to swap.
+- Card markup:
+  - `<article class="group relative overflow-hidden rounded-2xl border border-border/60 bg-background transition-all duration-500 hover:shadow-[0_20px_60px_-30px_rgba(139,94,60,0.35)] hover:-translate-y-0.5">`
+  - Image wrapper `aspect-[4/3] overflow-hidden`, `<img ... class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />`.
+  - Hover overlay: absolutely-positioned div with `bg-foreground/40` and centered "View Project" text in `text-background`, opacity 0 → 100 on `group-hover`.
+  - Body `p-5`: category eyebrow (`text-xs uppercase tracking-[0.25em] text-accent-foreground/70`), location (`text-sm text-muted-foreground`), description (`text-sm`).
+- Filtering via `projects.filter(p => filter === 'All' || p.category === filter)`. Wrap grid in framer-motion `AnimatePresence` for soft fade on filter change (using existing `framer-motion` dep — already used by `Reveal`).
 
-### 6. Footer (`src/components/site/Footer.tsx`)
-- Tighten vertical padding on mobile (`py-20` → `py-14`).
-- Ensure the address line wraps gracefully (the `·` separators currently look messy on narrow screens — switch to a stacked layout under `sm`).
-- Make social icons slightly larger (`h-9 w-9` → `h-11 w-11`) for easier tapping.
+**4. CTA section**
+- Full-width band, `bg-foreground text-background`, `py-20 lg:py-28`.
+- Centered content max-w `3xl`: H2 `font-serif text-4xl sm:text-5xl` "Like what you see?", paragraph muted ("Let us visit your space, take measurements, and give you a FREE consultation."), button.
+- Button: `<a href="https://wa.me/60123456789" target="_blank" rel="noopener">` styled like the existing Navbar Inquire CTA but inverted for dark bg: `inline-flex items-center px-6 py-3 rounded-xl bg-background text-foreground hover:bg-accent hover:text-accent-foreground transition-colors text-sm font-medium`.
 
-### 7. Global polish (`src/styles.css`)
-- Add `scroll-behavior: smooth` already exists — also add `overscroll-behavior-y: contain` on body to prevent rubber-band glitches.
-- Ensure `text-base` minimum on body inputs to avoid iOS auto-zoom.
-
-## Out of scope
-- No backend / data changes.
-- No new pages or routes.
-- No redesign of brand, colors, or fonts.
-
-Want me to proceed with all of the above, or focus on a specific section first (e.g. just Hero + Navbar, or just the forms)?
+### Out of scope
+- No real photo uploads, no CMS, no backend.
+- No project detail pages (the "View Project" overlay is visual only for now — can wire up later).
+- No new colors, fonts, or design tokens.

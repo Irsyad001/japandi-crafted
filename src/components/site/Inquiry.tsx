@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 import { ArrowRight } from "lucide-react";
 
 const residenceTypes = ["Apartment", "House", "Villa", "Office", "Other"];
-const furnitureTypes = ["Dining", "Living", "Workspace", "Bedroom", "Other"];
+const furnitureTypes = ["Dining", "Living", "Kitchen", "Workspace", "Bedroom", "Other"];
 
 export function Inquiry() {
   const [sent, setSent] = useState(false);

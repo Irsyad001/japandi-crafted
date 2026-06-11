@@ -1,11 +1,20 @@
-## Goal
-Resize the tree logo in the footer so it spans the full width of the section (like the GUCCI wordmark in the reference), instead of being centered at a small max height.
+## Problem
 
-## Change
-In `src/components/site/Footer.tsx`, update the logo wrapper:
+The navbar links point to `/#collection`, `/#process`, and `/#contact`. But `src/routes/index.tsx` runs this on mount:
 
-- Remove `flex items-center justify-center py-10` from the container
-- Remove `max-h-64 w-auto object-contain` from the `<img>`
-- Apply `block w-full h-auto object-cover select-none pointer-events-none` so the logo stretches edge-to-edge
+```tsx
+useEffect(() => {
+  if (typeof window !== "undefined" && window.location.hash) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+    window.scrollTo(0, 0);
+  }
+}, []);
+```
 
-No other files, colors, or content change.
+This strips the hash and force-scrolls to the top every time the home route mounts — so clicking Collection/Process/Contact does navigate to the hash, but the effect immediately erases it and jumps back to Home.
+
+## Fix
+
+In `src/routes/index.tsx`, remove the hash-stripping `useEffect` so the browser's native anchor scrolling works. When already on `/`, clicking `/#collection` will jump to the section; when on another route (e.g. `/portfolio`), it will load `/` and scroll to the section.
+
+No other files need changes. The anchor IDs (`#collection` on Collection, `#process` on Process, `#contact` on Inquiry) are already in place.

@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, Send, MessageCircle, Facebook } from "lucide-react";
-import mmtreeLogo from "@/assets/mmtree-logo.png";
+import mmtreeLogo from "@/assets/mmtree-logo-tree.png.asset.json";
 
 const WHATSAPP_NUMBER = "+60 18-323 9341";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}`;
@@ -83,11 +83,11 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border bg-accent/30">
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full overflow-hidden flex items-center justify-center py-10">
           <img
-            src={mmtreeLogo}
+            src={mmtreeLogo.url}
             alt="MM TREE Furniture logo"
-            className="block w-full h-auto object-cover select-none pointer-events-none"
+            className="block h-auto max-h-64 w-auto object-contain select-none pointer-events-none"
           />
         </div>
       </div>

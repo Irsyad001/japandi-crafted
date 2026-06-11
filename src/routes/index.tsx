@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
@@ -13,13 +12,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash) {
-      history.replaceState(null, "", window.location.pathname + window.location.search);
-      window.scrollTo(0, 0);
-    }
-  }, []);
-
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />

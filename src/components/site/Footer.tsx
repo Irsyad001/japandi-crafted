@@ -13,8 +13,8 @@ export function Footer() {
             MM TREE Furniture
           </a>
           <p className="mt-5 text-sm text-muted-foreground max-w-xs leading-relaxed">
-            A bespoke furniture studio practising the patient craft of Japandi
-            design from a small atelier in Kyoto.
+            "A bespoke furniture studio crafting considered pieces for refined
+            spaces — made to order from our atelier in Kajang, Malaysia."
           </p>
           <div className="mt-6 flex gap-3">
             <SocialIcon href="#" label="Instagram"><Instagram className="h-4 w-4" /></SocialIcon>

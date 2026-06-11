@@ -83,11 +83,11 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border bg-accent/30">
-        <div className="relative w-full overflow-hidden flex items-center justify-center py-10">
+        <div className="relative w-full overflow-hidden">
           <img
             src={mmtreeLogo.url}
             alt="MM TREE Furniture logo"
-            className="block h-auto max-h-64 w-auto object-contain select-none pointer-events-none"
+            className="block w-full h-auto object-cover select-none pointer-events-none"
           />
         </div>
       </div>
